@@ -1,0 +1,176 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    @media (max-width: 768px) {
+        width: calc(100% - (2 * var(--site-padding)));
+    }
+
+    padding: 1.5rem;
+    padding-bottom: 0.25rem;
+
+    height: calc(100vh - (3 * var(--site-padding)));
+    min-height: 600px;
+    max-height: 700px;
+
+    background-color: white;
+    border: var(--button-color) 4px solid;
+    margin-bottom: 0;
+    z-index: 0;
+    position: relative;
+}
+
+.landing-container::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    transform: translate(calc(-1.5rem + 4px), calc(-1.5rem + 4px));
+    border-bottom: black solid 4px;
+    border-right: black solid 4px;
+    z-index: -300;
+}
+
+.landing-title {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    position: relative;
+    max-width: fit-content;
+
+    margin-bottom: 1rem;
+}
+
+.landing-title::before {
+    background-color: #fbe8af;
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 100%;
+    z-index: -1;
+    bottom: 0;
+    transform: translate(0.7rem, -1.5rem);
+}
+
+.subtitle {
+    padding: 0;
+    h3 {
+        margin: 0;
+    }
+}
+
+.image-container {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+}
+
+.fortune-cookie {
+    width: 13rem;
+    height: auto;
+    background-color: transparent;
+}
+
+.fortune-cookie-paper {
+    position: absolute;
+
+    top: 40%;
+    left: 0;
+    z-index: 0;
+    width: 20rem; /* Adjust size of the paper */
+    animation: paperSlideIn 2s forwards; /* Trigger the slide-in animation */
+
+}
+
+@keyframes paperSlideIn {
+    from {
+        transform: translate(-20%, 0);
+    }
+    to {
+        transform: translate(60%, 0); /* Move the paper down */
+    }
+}
+
+
+.button-container {
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    align-content:end;
+    padding-bottom: 2.5rem;
+}
+
+.generate-button {
+    color: var(--button-color);
+    background-color: var(--background-color);
+    border: var(--button-color) solid 3px;
+    
+    //max-width: fit-content;
+    width: 100%;
+
+    font-size: 1.2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color, background-color 0.3s linear;
+    position: relative;
+
+    /* Initial state of the pseudo-element */
+    &::before {
+        position: absolute;
+        border-bottom: black solid 3px;
+        border-right: black solid 3px;
+        border-radius: 11px;
+        content: "";
+        transform: translate(calc(-20px + 3px), calc(-10px + 3px));
+        width: 100%;
+        height: 100%;
+        z-index: -3;
+        display: block; /* Ensure it is visible by default */
+    }
+
+    &:hover {
+        background-color: var(--button-color);
+        color: var(--background-color);
+        border: var(--background-color) solid 3px;
+    }
+
+    &:active {
+        background-color: var(--button-color);
+        color: var(--background-color);
+        border: var(--background-color) solid 3px;
+
+        transform: translate(3px, 3px);
+    }
+}
+
+/* Hide the pseudo-element when the button is pressed */
+.generate-button.pressed::before {
+    display: none;
+}
+
+.landing-footer {
+    align-self: center;
+    width: 100%;
+    bottom: 0;
+    border-top: 2px solid var(--button-color);
+    text-align: right;
+    margin-top: auto;
+
+    .personal-link {
+        color: var(--button-color);
+        position: relative;
+
+        &:hover {
+            color: red; /* Change color on hover */
+        }
+
+        &:active {
+            color: var(--button-color); /* Color change on click */
+        }
+    }
+}

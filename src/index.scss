@@ -1,0 +1,58 @@
+:root {
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Colors */
+  --background-color: #fbe8af; /* Warm fortune cookie yellow */
+  --button-color: #d62828; /* Vibrant red for the button */
+  --button-hover-color: #d62828;
+  --image-border-color: white;
+
+  /* Typography */
+  --text-color: #2b2b2b; /* Dark text for contrast */
+
+  --site-padding: 2rem;
+  --mobile-site-padding: 2rem 0 0 4px;
+}
+
+body {
+  margin: 0;
+
+  padding: var(--site-padding);
+
+  @media (max-width: 768px) {
+    padding: var(--mobile-site-padding);
+  }
+
+  justify-content: center;
+
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color); /* Apply text color globally */
+  
+  display: flex;
+
+  background: linear-gradient(45deg, #f3d37f, #f9e197);
+}
+
+
+body:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  background: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" style="transform:rotate(-30deg);"><text x="0" y="25" fill="rgba(255,0,0,0.2)" font-size="20" font-family=\'Noto Sans SC\'>前 程 似 锦</text></svg>') 
+    0 50px/100px 100px; /* Adjust size here */
+}
+
+h1 {
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+}
+
+p {
+  font-family: "Noto Sans SC", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
