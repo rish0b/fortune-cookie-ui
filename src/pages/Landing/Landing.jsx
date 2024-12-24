@@ -49,7 +49,7 @@ const Landing = () => {
 
   const waitForCookieToDisappear = async () => {
     if(revealYourFortuneButtonText)
-        await sleep(2000)
+        await sleep(1900)
     setRevealYourFortuneButtonText(!revealYourFortuneButtonText)
   }
 
@@ -99,6 +99,7 @@ const Landing = () => {
         > 
           {!showFortunePaper || revealYourFortuneButtonText ? "Reveal your fortune" : "Open another cookie"}
         </button>
+        
       </div>
       <div className="landing-footer">
         <p>❤️&nbsp;Made by <a className="personal-link" href="#">rishab</a></p>
