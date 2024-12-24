@@ -169,7 +169,7 @@
     align-self: center;
     text-align: center;
     cursor: pointer;
-    width: 75%;
+    width: 65%;
     align-content:end;
     padding-bottom: 2.75rem;
 }
@@ -178,6 +178,8 @@
     color: var(--button-color);
     background-color: var(--background-color);
     border: var(--button-color) solid 3px;
+
+    text-wrap:nowrap;
     
     //max-width: fit-content;
     width: 100%;
