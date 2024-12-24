@@ -33,7 +33,10 @@ const Landing = () => {
       }
   };
 
-  const handleGenerateFortune = async () => {
+  const handleGenerateFortune = () => {
+
+    waitForCookieToDisappear();
+
     if(!showFortunePaper) {
         setFortune('');
         setLuckyNumbers([]);
@@ -42,11 +45,13 @@ const Landing = () => {
 
     setShowFortunePaper(!showFortunePaper);
 
-    if(revealYourFortuneButtonText)
-        await sleep(2500)
-
-    setRevealYourFortuneButtonText(!revealYourFortuneButtonText)
   };
+
+  const waitForCookieToDisappear = async () => {
+    if(revealYourFortuneButtonText)
+        await sleep(2000)
+    setRevealYourFortuneButtonText(!revealYourFortuneButtonText)
+  }
 
   // Handle mouse down (button pressed)
   const handleMouseDown = () => {
@@ -75,7 +80,7 @@ const Landing = () => {
       <div className="image-container">
             <img src="/assets/fortune_cookie.png" alt="Fortune Cookie" className={`fortune-cookie${showFortunePaper ? "-reveal" : ""}`} />
         
-        {showFortunePaper && (
+        {showFortunePaper && !revealYourFortuneButtonText && (
             <div className="fortune-text">
                 <h3>{fortune}</h3>
                 <p>{luckyNumbers.length != 0 ? "Lucky Numbers: " + luckyNumbers.join(', ') : ""}</p>
