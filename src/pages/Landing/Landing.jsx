@@ -20,7 +20,7 @@ const Landing = () => {
     "Unraveling paper...",
     "Crafting your destiny...",
     "Aligning the stars...",
-    "Decoding the message...",
+    "Decoding message...",
     "Summoning answers...",
     "Charging your luck...",
     "Shuffling the numbers...",
@@ -163,7 +163,7 @@ const Landing = () => {
             onMouseUp={handleMouseUp} 
             onMouseLeave={handleMouseLeave} 
             > 
-                {!showFortunePaper ? "Reveal your fortune" : "Open another cookie"}
+                {!showFortunePaper ? "Reveal your fortune" : "🔁 Open another cookie"}
             </button>
         )}
         {loading && (

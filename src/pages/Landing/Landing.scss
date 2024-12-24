@@ -169,7 +169,7 @@
     align-self: center;
     text-align: center;
     cursor: pointer;
-    width: 65%;
+    width: 67%;
     align-content:end;
     padding-bottom: 2.75rem;
 }
@@ -180,9 +180,12 @@
     border: var(--button-color) solid 3px;
 
     text-wrap:nowrap;
+    text-overflow: ellipsis;
     
     //max-width: fit-content;
     width: 100%;
+
+    line-height: 1.2;
 
     font-size: 1.2rem;
     font-family: var(--font-family);
@@ -211,6 +214,9 @@
     color: var(--button-color);
     background-color: var(--background-color);
     border: var(--button-color) solid 3px;
+    border-radius: 8px;
+
+    text-wrap: nowrap;
     
     //max-width: fit-content;
     width: 100%;
@@ -218,10 +224,13 @@
     font-size: 1.2rem;
     font-family: var(--font-family);
     font-weight: 500;
-    border-radius: 8px;
+    line-height: 1.2;
+
     padding: 10px 20px;
+
     cursor: pointer;
     transition: color, background-color 0.3s linear;
+    
     position: relative;
 
     /* Initial state of the pseudo-element */
